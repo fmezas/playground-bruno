@@ -1,5 +1,12 @@
 symbols = '0123456789ABCDEFGHIJ'
 
+def convertToBase(number, base):
+    string = symbols[number%base]
+    while number >= base:
+        number = number/base
+        string = symbols[number%base] + string
+    return string
+
 def recurs(number, base):
     string = symbols[number%base]
     if number < base:
